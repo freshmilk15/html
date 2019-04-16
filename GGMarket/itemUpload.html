@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <title></title> 
+       <link rel="stylesheet" href="css/mui.min.css" />
+       <!--<script type="text/javascript" src="js/jquery-1.8.1.js" ></script>-->
+        <script type="text/javascript" src="js/mui.min.js" ></script>
+        <script src="js/getImages.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="js/jquery-3.3.1.js" ></script>
+        <script src="js/app.js"></script>
+        <style> 
+            .imageup{ width:100px; height: 36px; line-height:36px;} 
+            .button{  width:100px; height: 50px; line-height:50px;} 
+            ul li p{
+                display: inline-block;
+            }
+        </style> 
+    </head> 
+    <body> 
+        <ul class="list">
+            <li class='mui-table-view-cell mui-media'>
+                 <img id="headimg" class="headimg" src=''  height="300"  width="150">
+                 <textarea id="tip" name="" rows="" cols=""></textarea>
+                <p><a  class="imageup 1">上传图片1</a> </p>
+                <p><button onclick="upload(app.getState().account);" class='button'> 提交</button></p>
+            </li>
+            <!--<li class='mui-table-view-cell mui-media'>
+                 <img id="headimg" class="headimg" src=''  height="150"  width="150">
+                <p><a  class="imageup 2">上传图片2</a> </p>
+                <p><button onclick="upload();" class='button'> 提交</button></p>
+            </li>
+            <li class='mui-table-view-cell mui-media'>
+                 <img id="headimg" class="headimg" src=''  height="150"  width="150">
+                <p><a class="imageup 3">上传图片3</a> </p>
+                <p><button onclick="upload();" class='button'> 提交</button></p>
+            </li>-->
+        </ul>
+        
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function(){
+			
+			if(mui.os.plus){
+			        var buttonTit = [{
+				            title: "拍照"
+				        }, {
+				            title: "从手机相册选择"
+				        }];
+			        
+			        plus.nativeUI.actionSheet({
+				            title: "上传图片",
+				            cancel: "取消",
+				            buttons: buttonTit
+				        }, function(b) { /*actionSheet 按钮点击事件*/
+				            switch (b.index) {
+				                case 0:
+				                    break;
+				                case 1:
+				                    getImage(); /*拍照*/
+				                    break;
+				                case 2:
+				                    galleryImg();/*打开相册*/
+				                    break;
+				                default:
+				                    break;
+				            }
+				        })
+			     
+			}
+			}
+			)
+		</script>
+	</body>
+
+</html>
