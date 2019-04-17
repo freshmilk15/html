@@ -128,14 +128,16 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"fonts/mui.ttf",
-					"waterfall.html"
+					"waterfall.html",
+					"html/waterfall.html",
+					"coin.html"
 				],
 				"priority": 0,
 				"refer": [
 					"news.html",
-					"coin.html",
 					"quotes.html",
-					"html/waterfall.html"
+					"html/sidemenu.html",
+					"html/setting.html"
 				]
 			}
 		},

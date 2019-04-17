@@ -4,14 +4,18 @@
 		"resources": [
 			"js/mui.min.js",
 			"css/mui.min.css",
-			"waterfall.html"
+			"waterfall.html",
+			"html/waterfall.html",
+			"coin.html"
 		],
 		"refer": [
 			"waterfall.html",
 			"news.html",
 			"coin.html",
 			"quotes.html",
-			"html/waterfall.html"
+			"html/waterfall.html",
+			"html/sidemenu.html",
+			"html/setting.html"
 		],
 		"priority": 0
 	}

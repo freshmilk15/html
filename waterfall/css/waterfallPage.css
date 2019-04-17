@@ -9,7 +9,7 @@
 .twoRankedBox{ 
     margin:6px 8px; 
     overflow: hidden; 
-    padding-bottom:25px; 
+    padding-bottom:0px; 
 } 
 .twoRankedBox ul{ 
     width:49%; 
