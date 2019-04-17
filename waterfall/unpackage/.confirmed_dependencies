@@ -1,11 +1,18 @@
 {
-  "index.html": {
-    "href": "index.html",
-    "resources": [
-      "js/mui.min.js",
-      "css/mui.min.css"
-    ],
-    "refer": [],
-    "priority": 0
-  }
+	"index.html": {
+		"href": "index.html",
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"waterfall.html"
+		],
+		"refer": [
+			"waterfall.html",
+			"news.html",
+			"coin.html",
+			"quotes.html",
+			"html/waterfall.html"
+		],
+		"priority": 0
+	}
 }

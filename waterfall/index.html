@@ -19,37 +19,103 @@
 </head>
 
 
-<!--
-	作者：kerwin15@126.com
-	时间：2019-04-16
-	描述：引入自己的css
--->
-<link rel="stylesheet" href="css/waterfallPage.css" />
+<body>
+<div id="segmentedControl" class="mui-segmented-control">
+	<a class="mui-control-item mui-active" id="home" href="item1">待办公文（8）</a>
+	<a class="mui-control-item" id="coin" href="item2">已办公文</a>
+	<a class="mui-control-item" id="quotes" href="item3">全部公文</a>
+</div>
 
 
-<body style="background-color: #f3f3f3;">
-	    <!-- 商品列表 --> 
-    <div class="twoRankedBox"> 
-        <ul class="BoxLeft"> 
- 
-        </ul> 
- 
-        <ul class="BoxRight"> 
- 
-        </ul> 
-    </div> 
+
 </body>
-
-
-
-
-<!--
-	作者：kerwin15@126.com
-	时间：2019-04-16
-	描述：引入测试数据jason
--->
-<script type="text/javascript" src="js/test.js" ></script>
-    
-
-
+<script type="text/javascript" charset="utf-8">
+	//mui.init();
+	var subpages = ['html/waterfall.html', 'coin.html', 'quotes.html', 'news.html'];
+	var subpageStyle = {
+		top: '45px',
+		bottom: '51px'
+	};   
+	mui.plusReady(function() {
+		var self = plus.webview.currentWebview();
+		for (var i = 0; i < subpages.length; i++) {
+			var sub = plus.webview.create(subpages[i], subpages[i], subpageStyle);
+			self.append(sub);
+		}
+		plus.webview.show(subpages[0]);
+	});
+	
+	mui('.mui-segmented-control').on('tap', 'a', function(e) {
+		var tabId = this.getAttribute('id');
+		//var title = document.getElementById("title");
+		//title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+		for (i=0; i<4 ;i++) {
+			plus.webview.hide(subpages[i]);
+		}
+		switch (tabId){
+			case 'home':
+				if(mui.os.ios){
+					plus.webview.show(subpages[0]);
+				} else {
+					plus.webview.show(subpages[0],"fade-in",300);
+				}
+				break;
+			case 'coin':
+				if(mui.os.ios){
+					plus.webview.show(subpages[1]);
+				} else {
+					plus.webview.show(subpages[1],"fade-in",300);
+				}
+				break;
+			case 'quotes':
+				if(mui.os.ios){
+					plus.webview.show(subpages[2]);
+				} else {
+					plus.webview.show(subpages[2],"fade-in",300);
+				}
+				break;
+			case 'news':
+				if(mui.os.ios){
+					plus.webview.show(subpages[3]);
+				} else {
+					plus.webview.show(subpages[3],"fade-in",300);
+				}
+				break;
+			default:
+				break;
+		}
+	})
+  	
+</script>
+<!--script>
+      mui.init();
+      mui.plusReady(function() {
+        var group = new webviewGroup("tab-top-webview-main.html", {
+          items: [{
+            id: "waterfall.html",  //这是子页1的路径
+            url: "waterfall.html",
+            extras: {}
+          }, {
+            id: "tab-top-subpage-2.html",  //这是子页2的路径
+            url: "tab-top-subpage-2.html",
+            extras: {}
+          }],
+          onChange: function(obj) {
+            var c = document.querySelector(".mui-control-item.mui-active");
+            if(c) {
+              c.classList.remove("mui-active");
+            }
+            document.querySelector(".mui-scroll .mui-control-item:nth-child(" + (parseInt(obj.index) + 1) + ")").classList.add("mui-active");
+          }
+        });
+        mui(".mui-scroll").on("tap", ".mui-control-item", function(e) {
+          var wid = this.getAttribute("data-wid");
+          group.switchTab(wid);
+        });
+      });
+      mui.back = function() {
+        var _self = plus.webview.currentWebview();
+        _self.close("auto");
+      }
+    </script-->
 </html>
