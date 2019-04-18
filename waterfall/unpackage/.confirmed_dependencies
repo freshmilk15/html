@@ -18,5 +18,10 @@
 			"html/setting.html"
 		],
 		"priority": 0
+	},
+	"html/waterfall.html": {
+		"refer": [
+			"html/itemAdd.html"
+		]
 	}
 }

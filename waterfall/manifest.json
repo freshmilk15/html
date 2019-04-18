@@ -139,6 +139,13 @@
 					"html/sidemenu.html",
 					"html/setting.html"
 				]
+			},
+			"html/waterfall.html": {
+				"resources": [],
+				"refer": [
+					"html/itemAdd.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
