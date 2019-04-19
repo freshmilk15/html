@@ -27,15 +27,15 @@
 	</header>
 	<div class="mui-content">
 		<div id="segmentedControl" class="mui-segmented-control">
-			<a class="mui-control-item" id="home">关注</a>
-			<a class="mui-control-item mui-active" id="coin">饶圈</a>
-			<a class="mui-control-item" id="quotes">热门</a>
+			<a class="mui-control-item" id="interest">关注</a>
+			<a class="mui-control-item mui-active" id="home">饶圈</a>
+			<a class="mui-control-item" id="hot">热门</a>
 		</div>	
 	</div>
 </body>
 <script type="text/javascript" charset="utf-8">
 	//mui.init();
-	var subpages = ['coin.html', 'html/waterfall.html', 'quotes.html', 'news.html'];
+	var subpages = ['html/interest.html', 'html/waterfall.html', 'html/hot.html'];
 	var subpageStyle = {
 		top: '85px',
 		bottom: '0px'
@@ -75,36 +75,29 @@
 		var tabId = this.getAttribute('id');
 		//var title = document.getElementById("title");
 		//title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
-		for (i=0; i<4 ;i++) {
+		for (i=0; i<3 ;i++) {
 			plus.webview.hide(subpages[i]);
 		}
 		switch (tabId){
-			case 'home':
+			case 'interest':
 				if(mui.os.ios){
 					plus.webview.show(subpages[0]);
 				} else {
 					plus.webview.show(subpages[0],"fade-in",300);
 				}
 				break;
-			case 'coin':
+			case 'home':
 				if(mui.os.ios){
 					plus.webview.show(subpages[1]);
 				} else {
 					plus.webview.show(subpages[1],"fade-in",300);
 				}
 				break;
-			case 'quotes':
+			case 'hot':
 				if(mui.os.ios){
 					plus.webview.show(subpages[2]);
 				} else {
 					plus.webview.show(subpages[2],"fade-in",300);
-				}
-				break;
-			case 'news':
-				if(mui.os.ios){
-					plus.webview.show(subpages[3]);
-				} else {
-					plus.webview.show(subpages[3],"fade-in",300);
 				}
 				break;
 			default:

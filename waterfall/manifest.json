@@ -130,20 +130,43 @@
 					"fonts/mui.ttf",
 					"waterfall.html",
 					"html/waterfall.html",
-					"coin.html"
+					"coin.html",
+					"html/interest.html"
 				],
 				"priority": 0,
 				"refer": [
 					"news.html",
 					"quotes.html",
 					"html/sidemenu.html",
-					"html/setting.html"
+					"html/setting.html",
+					"html/hot.html"
 				]
 			},
 			"html/waterfall.html": {
 				"resources": [],
 				"refer": [
 					"html/itemAdd.html"
+				],
+				"priority": 0
+			},
+			"html/interest.html": {
+				"resources": [],
+				"refer": [
+					"html/itemAdd.html"
+				],
+				"priority": 0
+			},
+			"html/hot.html": {
+				"resources": [],
+				"refer": [
+					"html/itemAdd.html"
+				],
+				"priority": 0
+			},
+			"html/sidemenu.html": {
+				"resources": [],
+				"refer": [
+					"html/login.html"
 				],
 				"priority": 0
 			}

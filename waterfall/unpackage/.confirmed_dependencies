@@ -1,27 +1,45 @@
 {
-	"index.html": {
-		"href": "index.html",
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"waterfall.html",
-			"html/waterfall.html",
-			"coin.html"
-		],
-		"refer": [
-			"waterfall.html",
-			"news.html",
-			"coin.html",
-			"quotes.html",
-			"html/waterfall.html",
-			"html/sidemenu.html",
-			"html/setting.html"
-		],
-		"priority": 0
-	},
-	"html/waterfall.html": {
-		"refer": [
-			"html/itemAdd.html"
-		]
-	}
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "waterfall.html",
+      "html/waterfall.html",
+      "coin.html",
+      "html/interest.html"
+    ],
+    "refer": [
+      "waterfall.html",
+      "news.html",
+      "coin.html",
+      "quotes.html",
+      "html/waterfall.html",
+      "html/sidemenu.html",
+      "html/setting.html",
+      "html/interest.html",
+      "html/hot.html"
+    ],
+    "priority": 0
+  },
+  "html/waterfall.html": {
+    "refer": [
+      "html/itemAdd.html"
+    ]
+  },
+  "html/interest.html": {
+    "refer": [
+      "html/itemAdd.html"
+    ]
+  },
+  "html/hot.html": {
+    "refer": [
+      "html/itemAdd.html"
+    ]
+  },
+  "html/sidemenu.html": {
+    "refer": [
+      "html/login.html"
+    ]
+  }
 }
