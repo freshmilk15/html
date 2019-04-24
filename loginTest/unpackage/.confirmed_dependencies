@@ -1,0 +1,51 @@
+{
+	"main.html": {
+		"refer": [
+			"setting.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"main.html",
+			"reg.html",
+			"forget_password.html",
+			"unlock.html",
+			"index.html"
+		]
+	},
+	"index.html": {
+		"resources": [
+			"html/interest.html"
+		],
+		"refer": [
+			"html/sidemenu.html",
+			"html/hot.html",
+			"html/interest.html",
+			"html/waterfall.html",
+			"setting.html",
+			"html/offcanvas-drag-left-plus-menu.html",
+			"html/offcanvas-drag-right-plus-menu.html"
+		]
+	},
+	"html/interest.html": {
+		"refer": [
+			"html/login.html"
+		]
+	},
+	"html/sidemenu.html": {
+		"refer": [
+			"setting.html",
+			"html/login.html"
+		]
+	},
+	"html/hot.html": {
+		"refer": [
+			"html/itemAdd.html"
+		]
+	},
+	"html/waterfall.html": {
+		"refer": [
+			"html/itemAdd.html"
+		]
+	}
+}

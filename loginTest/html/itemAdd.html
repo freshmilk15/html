@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		
+		<style type="text/css">
+			.mybutton{
+				height: 220px;
+			}
+			#textarea{
+				height:300px;
+			}
+			
+			textarea.noscrollbars {
+			  overflow: hidden;
+			  width: 100%;
+			  height: 50px;
+			  
+			}
+			
+		</style>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			function autoGrow (oField) {
+			  if (oField.scrollHeight > oField.clientHeight) {
+			    oField.style.height = oField.scrollHeight + "px";
+			  }
+			}
+		</script>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav mui-bar-nav-bg">
+	    	<a id="historyBack" class="mui-icon mui-icon-back mui-action-back">关闭</a>
+	    	<a class="mui-icon mui-icon-paperplane mui-pull-right"></a>
+	    	<h1 class="mui-title">发布趣图</h1>
+		</header>
+		<!--<header class="mui-bar mui-bar-nav mui-bar-nav-bg">
+		    <a id="icon-menu" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-action-back mui-icon mui-icon-home mui-pull-right mui-a-color"></a>
+		    <h1 class="mui-title">标题文字</h1>
+		</header>-->
+		
+		<div class="mui-content">
+			<button type="button" class="mybutton mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">贴上一张图片</button>
+			<!--<textarea id="textarea" onfocus="inputFocus" maxlength="200" autofocus="autofocus" placeholder="说点什么吧..." class="mui-text-left"></textarea>
+		-->
+		<textarea class="noscrollbars"  style="border: none;background:bottom;" placeholder="说点什么吧..." onkeyup="autoGrow(this);"></textarea>
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+
+</html>
