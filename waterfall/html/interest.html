@@ -90,6 +90,15 @@
 <script type="text/javascript" src="../js/test.js" ></script>
     
 
-<script type="text/javascript" src="../js/addButton.js" charset="utf-8"></script>
+<!--script type="text/javascript" src="../js/addButton.js" charset="utf-8"></script-->
+<script type="text/javascript">
+	document.getElementById("icon-add").addEventListener('tap', function() {
+		mui.openWindow({
+		    url:'login.html',
+		    id:'login',
+		 });
+		}
+		)
 
+</script>
 </html>

@@ -152,7 +152,8 @@
 			"html/interest.html": {
 				"resources": [],
 				"refer": [
-					"html/itemAdd.html"
+					"html/itemAdd.html",
+					"html/login.html"
 				],
 				"priority": 0
 			},

@@ -25,21 +25,26 @@
   "html/waterfall.html": {
     "refer": [
       "html/itemAdd.html"
-    ]
+    ],
+    "resources": []
   },
   "html/interest.html": {
     "refer": [
-      "html/itemAdd.html"
-    ]
+      "html/itemAdd.html",
+      "html/login.html"
+    ],
+    "resources": []
   },
   "html/hot.html": {
     "refer": [
       "html/itemAdd.html"
-    ]
+    ],
+    "resources": []
   },
   "html/sidemenu.html": {
     "refer": [
       "html/login.html"
-    ]
+    ],
+    "resources": []
   }
 }
