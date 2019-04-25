@@ -29,7 +29,8 @@
 	},
 	"html/interest.html": {
 		"refer": [
-			"html/login.html"
+			"html/login.html",
+			"html/itemAdd.html"
 		]
 	},
 	"html/sidemenu.html": {

@@ -10,8 +10,8 @@
 
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<style>
-			body,.mui-content {
-				background-color: #333;
+			body, .mui-content {
+				background-color: #666;
 				color: #fff;
 			}
 			header.mui-bar{
@@ -20,7 +20,7 @@
 			.mui-bar-nav~.mui-content{
 				padding: 0;
 			}
-			.title{
+			 .title{
 			  	margin: 35px 15px 10px;
 			  }
 			  .title+.content{
@@ -35,18 +35,17 @@
 			  }
 		</style>
 	</head>
-
 	<body>
 		<div class="mui-content">
 			<div class="title">侧滑导航</div>
 				<div class="content">
 					这是侧滑菜单示例，你可以在这里放置任何内容；关闭侧滑菜单有多种方式：
-					1.在手机屏幕任意位置快速向右滑动(swipe)；
+					1.在手机屏幕任意位置快速向左滑动(swipe)；
 					2.点击本侧滑菜单页之外的任意位置;
 					3.点击如下红色按钮；
 					<span class="android-only">
 						4.Android手机按back键；5.Android手机按menu键
-					</span>。
+					</span>
 					<p style="margin: 10px 15px;">
 						<button id="close-btn" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="padding: 5px 20px;">关闭侧滑菜单</button>
 					</p>
@@ -55,48 +54,58 @@
 				<div class="title" style="margin-bottom: 25px;">侧滑列表示例</div>
 				<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
 					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">Item 1</a>
+						<a class="mui-navigate-right">
+							Item 1
+						</a>
 					</li>
 					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">Item 2</a>
+						<a class="mui-navigate-right">
+							Item 2
+						</a>
 					</li>
 					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">Item 3</a>
+						<a class="mui-navigate-right">
+							Item 3
+						</a>
 					</li>
-						<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">Item 4</a>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 4
+						</a>
 					</li>
-						<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">Item 5</a>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 5
+						</a>
 					</li>
-						<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">Item 6</a>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 6
+						</a>
 					</li>
 				</ul>
 		</div>
-	<script src="../js/mui.min.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		//关闭back、menu按键监听，这样侧滑主界面会自动获得back和memu的按键事件，仅在主界面处理按键逻辑即可；
-		mui.init({
-			keyEventBind: {
-				backbutton: false,
-				menubutton: false
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				keyEventBind: {
+					backbutton: false,
+					menubutton: false
+				}
+			});
+			//获得侧滑主窗口webview对象
+			var main = null;
+			mui.plusReady(function () {
+				main = plus.webview.currentWebview().opener();
+			})
+			function closeMenu () {
+				mui.fire(main,"menu:swipeleft");
 			}
-		});
-		var main = null;
-		mui.plusReady(function () {
-			main = plus.webview.currentWebview().opener();
-		})
-		
-		function closeMenu () {
-			mui.fire(main,"menu:swiperight");
-		}
-		
-		//左滑显示出来的菜单，只需监听右滑，然后将菜单关闭即可；在该菜单上左滑，不做任何操作；
-		window.addEventListener("swiperight",closeMenu);
-		
-		document.getElementById("close-btn").addEventListener('tap',closeMenu);
-	</script>
+			//优化显示出来的侧滑菜单，只需监听该菜单的左滑事件，然后将其关闭即可；在菜单上右滑，不做任何操作；
+			window.addEventListener("swipeleft",closeMenu);  
+			document.getElementById("close-btn").addEventListener('tap',closeMenu);
+			mui.menu = closeMenu;
+		</script>
 </body>
 
 </html>
