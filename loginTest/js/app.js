@@ -23,15 +23,17 @@
 			return loginInfo.account == user.account && loginInfo.password == user.password;
 		});
 		if (authed) {
-			return owner.createState(loginInfo.account, callback);
+			return owner.createState(loginInfo.account,loginInfo.account,null, callback);
 		} else {
 			return callback('用户名或密码错误');
 		}
 	};
 
-	owner.createState = function(name, callback) {
+	owner.createState = function(name,account,img, callback) {
 		var state = owner.getState();
-		state.account = name;
+		state.name = name;
+		state.account = account;
+		state.imgurl = img === null?'../images/img_01.jpg':img;
 		state.token = "token123456789";
 		owner.setState(state);
 		return callback();
