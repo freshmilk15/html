@@ -213,7 +213,7 @@
 										console.log(JSON.stringify(auth.authResult));
 										
 										console.log("openid=="+auth.authResult.openid);
-										var name = auth.userInfo.nickname || auth.userInfo.name;
+										var nickname = auth.userInfo.nickname || auth.userInfo.name;
 										var account = auth.authResult.openid;
 										
 										var imgurl = null;
@@ -226,7 +226,7 @@
 											//console.log(imgurl);
 										}
 									
-										app.createState(name,account,imgurl, function() {
+										app.createState(nickname,account,imgurl, function() {
 											//waiting.close();
 											toMain();
 											

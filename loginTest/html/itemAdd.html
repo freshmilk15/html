@@ -99,8 +99,10 @@
 				
 				document.getElementById('publish').addEventListener('tap', function() {
 					var account = app.getState().account;
-					console.log(account);
-					upload(account);
+					var nickname = app.getState().name;
+					var headImgUrl = app.getState().imgurl;
+					console.log("upload account:"+account+",nickname:"+nickname+",headimgurl:"+headImgUrl);
+					upload(account,nickname,headImgUrl);
 				});
 	</script>
 

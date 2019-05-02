@@ -30,10 +30,17 @@
     	描述：添加按钮样式
     -->
 <style type="text/css">
-	.icon-add{
+	#icon-add{
 		position: fixed;
 		bottom: 30px;
 		right: 30px;
+		font-size: 80px;
+	}
+	
+	#icon-add2{
+		position: fixed;
+		bottom: 30px;
+		left: 30px;
 		font-size: 80px;
 	}
 </style>
@@ -63,6 +70,7 @@
     </div> 
     
     <a id="icon-add" class="icon-add mui-icon mui-icon-plus-filled"></a>
+    <a id="icon-add2" class="icon-add mui-icon mui-icon-plus-filled"></a>
 </body>
 
 
@@ -75,5 +83,59 @@
     
 
 <script type="text/javascript" src="../js/addButton.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+	document.getElementById("icon-add2").addEventListener('tap', function() {
+		
+			var url = 'http://296py5.natappfree.cc';
+			mui.ajax(url+'/fetchItems',{
+			    data:{
+			        page:0,
+			        size:10
+			    },
+			    dataType:'json',//服务器返回json格式数据
+			    type:'post',//HTTP请求类型
+			    timeout:10000,//超时时间设置为10秒；
+			    //headers:{'Content-Type':'application/json'},
+			    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+			    success:function(data){
+			        //服务器返回响应，根据响应结果，分析是否登录成功；
+			        
+			        console.log(JSON.stringify(data));
+			        //console.log(data.length);
+			        //console.log(data[0].picAddress)
+			        
+			        
+			        for(var i=0;i<data.length;i++){ 
+			        	var imgurl = data[i].picAddress;
+			        	var iid = data[i].identityID;
+						var nnickname = data[i].nickName;
+			        	var imgsrc = url + '/IMG/' + iid + '/'+imgurl.substring(imgurl.lastIndexOf('\\')+1, imgurl.length);
+					    console.log(imgsrc);
+					    var chtml = '<li><p class="product_picture"><img src="'+imgsrc+'"></p>'
+					            +'<p class="product_np"><a>'+data[i].nickName+'</a><a>￥'+data[i].laud+'</a></p>' 
+					            +'<p class="product_ie">'+data[i].description+'</p></li>' 
+					 
+					    if($('.BoxLeft').height() < $('.BoxRight').height()){ 
+					        $('.BoxLeft').append(chtml); 
+					    }else{ 
+					        $('.BoxRight').append(chtml); 
+					    } 
+					} 
+			        
+			        
+			        
+			        
+			    },
+			    error:function(xhr,type,errorThrown){
+			        //异常处理；
+			        console.log(type);
+			    }
+			});
+		
+		}
+	)
+	
+</script>
 
 </html>

@@ -1,11 +1,14 @@
 package com.kerwin.Gmarket.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import org.hibernate.type.TrueFalseType;
 
 @Entity
 public class Item implements Serializable {
@@ -18,6 +21,12 @@ public class Item implements Serializable {
 	@Column(nullable = false)
 	private String IdentityID;
 	
+	@Column(nullable = false)
+	private String nickName;
+	
+	@Column(nullable = false)
+	private String headImgUrl;
+	
 	@Column(nullable = false, unique = true)
 	private String picAddress;
 	
@@ -25,7 +34,10 @@ public class Item implements Serializable {
 	private String description;
 	
 	@Column(nullable = false)
-	private String regTime;
+	private Integer laud;
+	
+	@Column(nullable = false)
+	private Date regTime;
 	
 	
 	
@@ -33,14 +45,20 @@ public class Item implements Serializable {
 	public Item() {
 		super();
 	}
-	public Item(String identityID, String picAddress, String description,
-			String regTime) {
+	public Item(String identityID, String nickName,String headImgUrl, String picAddress, String description,Integer laud,
+			Date regTime) {
 		super();
 		this.IdentityID = identityID;
+		this.nickName = nickName;
+		this.headImgUrl = headImgUrl;
 		this.picAddress = picAddress;
 		this.description = description;
+		this.laud = laud;
 		this.regTime = regTime;
 	}
+	
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -65,11 +83,29 @@ public class Item implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getRegTime() {
+	public Date getRegTime() {
 		return regTime;
 	}
-	public void setRegTime(String regTime) {
+	public void setRegTime(Date regTime) {
 		this.regTime = regTime;
+	}
+	public String getNickName() {
+		return nickName;
+	}
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+	public Integer getLaud() {
+		return laud;
+	}
+	public void setLaud(Integer laud) {
+		this.laud = laud;
+	}
+	public String getHeadImgUrl() {
+		return headImgUrl;
+	}
+	public void setHeadImgUrl(String headImgUrl) {
+		this.headImgUrl = headImgUrl;
 	}
 
 	

@@ -50,10 +50,10 @@ function galleryImg(){
 
 
 // 上传的方法
-function upload(id){
+function upload(id,nickname,headImgUrl){
    	//MicroTaskGUID = common.guid();
    	//var url = localStorage.getItem("serverUrl")+"/Image/uploadItem" 
-   	var url = "http://n4xm2w.natappfree.cc/Image/uploadItem";
+   	var url = "http://296py5.natappfree.cc/upload";
    	//var files = mui(".headimg"); // 要上传的 img 标签
    	var files = document.getElementById('imgAdd');//找到图片
    	var text = document.getElementById('tip').value;//找到图片说明
@@ -75,6 +75,9 @@ function upload(id){
     //添加其他参数
 	task.addData("tip",text);
 	task.addData("id",id);
+	task.addData("nickname",nickname);
+	task.addData("headImgUrl",headImgUrl);
+	
     // 页面中要上传的 图片路径
     task.addFile(files.src,{key:"file"});
     task.start();
