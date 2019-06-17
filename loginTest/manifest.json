@@ -306,7 +306,8 @@
 			"html/waterfall.html": {
 				"resources": [],
 				"refer": [
-					"html/itemAdd.html"
+					"html/itemAdd.html",
+					"html/itemDetail.html"
 				],
 				"priority": 0
 			}

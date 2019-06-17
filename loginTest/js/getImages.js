@@ -53,7 +53,7 @@ function galleryImg(){
 function upload(id,nickname,headImgUrl){
    	//MicroTaskGUID = common.guid();
    	//var url = localStorage.getItem("serverUrl")+"/Image/uploadItem" 
-   	var url = "http://296py5.natappfree.cc/upload";
+   	var url = "http://c2tgw7.natappfree.cc/upload";
    	//var files = mui(".headimg"); // 要上传的 img 标签
    	var files = document.getElementById('imgAdd');//找到图片
    	var text = document.getElementById('tip').value;//找到图片说明

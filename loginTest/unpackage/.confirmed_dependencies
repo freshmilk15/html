@@ -46,7 +46,8 @@
 	},
 	"html/waterfall.html": {
 		"refer": [
-			"html/itemAdd.html"
+			"html/itemAdd.html",
+			"html/itemDetail.html"
 		]
 	}
 }

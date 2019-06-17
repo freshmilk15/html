@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		
+		<style type="text/css">
+			.mybutton{
+				height: 220px;
+			}
+			#textarea{
+				height:300px;
+			}
+			
+			textarea.noscrollbars {
+			  overflow: hidden;
+			  width: 100%;
+			  height: 50px;
+			  
+			}
+			
+		</style>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();	
+			function autoGrow (oField) {
+			  if (oField.scrollHeight > oField.clientHeight) {
+			    oField.style.height = oField.scrollHeight + "px";
+			  }  
+			}
+		</script>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav mui-bar-nav-bg">
+	    	<a id="historyBack" class="mui-icon mui-icon-back mui-action-back">返回</a>
+	    	<a class="mui-icon mui-icon-more mui-pull-right"></a>
+	    	<h1 class="mui-title">详情</h1>
+		</header>
+		
+		<div class="mui-content">
+			<img id="pic" type="button" class="mybutton mui-btn mui-btn-primary mui-btn-block mui-btn-outlined" />
+			<!--<textarea id="textarea" onfocus="inputFocus" maxlength="200" autofocus="autofocus" placeholder="说点什么吧..." class="mui-text-left"></textarea>
+		-->
+		<textarea id="des" class="noscrollbars"  style="border: none;background:bottom;" placeholder="详情。。。" onkeyup="autoGrow(this);"></textarea>
+		</div>
+		<div>
+			<p class="product_np"><a id = "nick"></a><a id="laud">   </a></p>
+		</div>
+		
+	</body>
+	
+	<script>
+		mui.plusReady(function(){
+			var url = 'http://c2tgw7.natappfree.cc';
+			    var self = plus.webview.currentWebview();
+			    var imgurl = self.data.picAddress;
+			    var iid = self.data.identityID;
+			    var imgsrc = url + '/IMG/' + iid + '/'+imgurl.substring(imgurl.lastIndexOf('\\')+1, imgurl.length);
+			    //获得参数
+			    document.getElementById("pic").src = imgsrc;
+			    
+			    var description = self.data.description;
+			    document.getElementById("des").value = description;
+			    
+			    var nickname = self.data.nickName;
+			    document.getElementById("nick").innerHTML = nickname;
+			    
+			    var laud = self.data.laud;
+			    document.getElementById("laud").innerHTML = laud;
+			    
+			    console.log(imgsrc);
+			});
+	</script>
+
+</html>

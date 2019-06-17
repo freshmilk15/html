@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function(){
+    			document.getElementById('test').addEventListener('tap',function hotList() {
+            $.ajax({
+                type: "post",
+                url: "http://znxhyg.natappfree.cc/Image",
+                dataType: "json",
+                success: function(data) {
+                    console.log(JSON.stringify(data));
+                    console.log(data.src);
+                   $('.mui-slider-group').append('<div class="mui-slider-item"><img class="lunbo-img" src="http://znxhyg.natappfree.cc/' + data.src + '" /></div>');                  
+                   
+                }
+            });
+        })
+
+			});
+		</script>
+		
+		<!--<script type="text/javascript">
+			function hotList() {
+            $.ajax({
+                type: "post",
+                url: "http://znxhyg.natappfree.cc/Image",
+                dataType: "json",
+                success: function(data) {
+                    console.log(JSON.stringify(data));
+                    /*$('.mui-slider-group').empty();
+                    $('.mui-slider-indicator').empty();
+                    var length = data.data.list.length;
+                    if(length == 1) {
+                        console.log(data.data.list[0].src)
+                        $('.mui-slider-group').append('<div class="mui-slider-item"><img class="lunbo-img" src="' + data.data.list[0].src + '" /></div>');
+                    } else {
+                        $('.mui-slider-group').append('<div class="mui-slider-item mui-slider-item-duplicate"><img class="lunbo-img" src="' + data.data.list[length - 1].src + '" /></div>');
+                        $('.mui-slider-indicator').append('<div class="mui-indicator mui-active"></div>');
+                        for(var i = 0; i < length; i++) {
+                            $('.mui-slider-group').append('<div class="mui-slider-item"><img class="lunbo-img" src="' + data.data.list[i].src + '" /></div>');
+                        }
+                        $('.mui-slider-group').append('<div class="mui-slider-item mui-slider-item-duplicate"><img class="lunbo-img" src="' + data.data.list[0].src + '" /></div>');
+                        for(var i = 0; i < length - 1; i++) {
+                            $('.mui-slider-indicator').append('<div class="mui-indicator"></div>');
+                        }
+                    }*/
+                   
+                   $('.mui-slider-group').append('<div class="mui-slider-item"><img class="lunbo-img" src="' + data.src + '" /></div>');                  
+                   
+                   
+                    /*var gallery = mui('.mui-slider');
+                    gallery.slider({
+                        interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+                    });*/
+                }
+            });
+        }
+		</script>
+		-->
+		
+		<div class="mui-content">
+			
+			<div id="btn">
+		      	<button id="test" />
+		      </div>
+			
+			<div class="mui-slider">
+			  <div class="mui-slider-group">
+			    <!-- 第一张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=169078257,1505300808&fm=173&app=49&f=JPEG?w=640&h=864&s=D8A8AF563F675E152075316B0300507B">
+		          </a>
+		        </div>
+		        <!-- 第二张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2361678362,3634803887&fm=173&app=49&f=JPEG?w=640&h=719&s=D62C46EAD6638B5D5CE361280300E01A">
+		          </a>
+		        </div>
+		        <!-- 第三张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4117519716,265792537&fm=173&app=49&f=JPEG?w=640&h=427&s=66F9E87E5032C79A995964EA0300E032">
+		          </a>
+		        </div>
+		        <!-- 第四张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3841277253,243895260&fm=173&app=49&f=JPEG?w=640&h=360&s=A1EEFA04527305964728319803005096">
+		          </a>
+		        </div>
+			  </div>
+			</div>
+			
+		      
+		      
+		      <!--<div class="mui-slider-indicator">
+		        <div class="mui-indicator mui-active"></div>
+		        <div class="mui-indicator"></div>
+		        <div class="mui-indicator"></div>
+		        <div class="mui-indicator"></div>
+		      </div>-->
+		      
+		      
+		    </div>
+		</div>
+	</body>
+
+</html>
